@@ -1,0 +1,39 @@
+Este é o diretório para CET088 Cache Lab.
+
+************************
+Executando os autoavaliadores:
+************************
+
+Antes de executar o autoavaliador, compile seu código:
+    linux> make
+
+Cheque a corretude de seu simulador:
+    linux> ./test-csim
+
+Cheque a corretude e performance de suas funções de transposição:
+    linux> ./test-trans -M 32 -N 32
+    linux> ./test-trans -M 64 -N 64
+    linux> ./test-trans -M 61 -N 67
+
+Cheque tudo de uma vez (este é o programa que o seu instrutor utiliza):
+    linux> ./driver.py    
+
+******
+Arquivos:
+******
+
+# Você irá modificar e manipular estes dois arquivos
+csim.c       Seu simulador de Cache
+trans.c      Sua função de transposição
+
+# Ferramentas para avaliar seu simulador e função de transposição
+Makefile     Constrói o simulador e ferramentas
+README       Este arquivo
+driver.py*   O programa de driver, executa test-csim e test-trans
+cachelab.c   Funções auxiliares necessárias
+cachelab.h   Arquivo de cabeçalho necessário
+csim-ref*    O executável de referência do simulador de cache
+test-csim*   Testa seu simulador de cache
+test-trans.c Testa sua função de transposição
+tracegen.c   Programa de ajuda utilizado pelo test-trans
+traces/      Arquivos de rastro utilizados por test-csim.c
