@@ -1,0 +1,126 @@
+gcc -O0 -g -Wall -Werror -c queue.c 
+gcc -O0 -g -Wall -Werror -o qtest qtest.c report.c console.c harness.c queue.o
+tar cf handin.tar queue.c queue.h
+chmod +x driver.py
+./driver.py
+# Teste de insert_head e remove_head
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 3 falhou (1 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 1 falhou (2 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (3 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR:  Remocao da fila falhou (4 falhas totais)
+Erro de limite execedido. Parando a execucao do comando
+# Teste de insert_head, insert_tail, e remove_head
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 3 falhou (1 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 1 falhou (2 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (3 falhas totais)
+ERROR: Insercao de 5 falhou (4 falhas totais)
+Erro de limite execedido. Parando a execucao do comando
+# Test of insert_head, insert_tail, reverse, and remove_head
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (1 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 1 falhou (2 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 3 falhou (3 falhas totais)
+ERROR: Insercao de 5 falhou (4 falhas totais)
+Erro de limite execedido. Parando a execucao do comando
+# Teste de insert_head, insert_tail, e size
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 3 falhou (1 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 1 falhou (2 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (3 falhas totais)
+ERROR: Insercao de 5 falhou (4 falhas totais)
+Erro de limite execedido. Parando a execucao do comando
+# Teste de insert_head, insert_tail, remove_head reverse, e size
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (1 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 1 falhou (2 falhas totais)
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 3 falhou (3 falhas totais)
+ERROR: Insercao de 5 falhou (4 falhas totais)
+Erro de limite execedido. Parando a execucao do comando
+# Teste de operações sobre a fila NULL
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+# Teste de operações sobre a fila vazia
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+# Teste de remove_head com argumento NULL
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+# Teste de falha malloc sobre new
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+Erro de alocação
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+Erro de alocação
+# Teste falha malloc sobre insert_head
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+# Teste de falha malloc sobre insert_tail
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+# Teste de performance de insert_tail
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (1 falhas totais)
+ERROR: Insercao de 3 falhou (2 falhas totais)
+ERROR: Insercao de 4 falhou (3 falhas totais)
+# Teste de performance de size
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (1 falhas totais)
+# Teste performance de insert_tail, size, e reverse
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Ocorreu uma falta de segmentacao. Voce derefenciou um NULL ou ponteiro invalido
+ERROR: Insercao de 2 falhou (1 falhas totais)
+ERROR: Insercao de 3 falhou (2 falhas totais)
+./driver.py []
+---	Rastro	\Pontos
++++ TESTANDO registro trace-01-ops:
+---	trace-01-ops	0/7
++++ TESTANDO registro trace-02-ops:
+---	trace-02-ops	0/7
++++ TESTANDO registro trace-03-ops:
+---	trace-03-ops	0/7
++++ TESTANDO registro trace-04-ops:
+---	trace-04-ops	0/7
++++ TESTANDO registro trace-05-ops:
+---	trace-05-ops	0/7
++++ TESTANDO registro trace-06-robust:
+---	trace-06-robust	0/7
++++ TESTANDO registro trace-07-robust:
+---	trace-07-robust	0/7
++++ TESTANDO registro trace-08-robust:
+---	trace-08-robust	0/7
++++ TESTANDO registro trace-09-malloc:
+---	trace-09-malloc	0/7
++++ TESTANDO registro trace-10-malloc:
+---	trace-10-malloc	0/7
++++ TESTANDO registro trace-11-malloc:
+---	trace-11-malloc	0/7
++++ TESTANDO registro trace-12-perf:
+---	trace-12-perf	0/7
++++ TESTANDO registro trace-13-perf:
+---	trace-13-perf	0/8
++++ TESTANDO registro trace-14-perf:
+---	trace-14-perf	0/8
+---	TOTAL		0/100

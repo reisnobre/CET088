@@ -1,0 +1,138 @@
+***********************
+SWB Data Lab
+Direções para os alunos
+***********************
+
+Seu objetivo é modificar sua cópia de bits.c de modo que ela passe
+em todos os testes em "btest" sem violar nenhuma das diretrizes de
+codificação.
+
+
+*********
+0. Arquivos:
+*********
+
+Makefile	- Constrói btest, fshow, and ishow
+README		- Este arquivo
+bits.c		- O arquivo que você irá modificar e entregar
+bits.h		- Arquivo de cabeçalho
+btest.c		- O programa principal btest
+  btest.h	- Usado para construir btest
+  decl.c	- Usado para construir btest
+  tests.c       - Usado para construir btest
+  tests-header.c- Usado para construir btest
+dlc*		- Compilador binário de verificação de regras (compilador data lab)
+driver.pl*	- Programa que utiliza btest e dlc para geração de notas de bits.c
+Driverhdrs.pm   - Cabeçalho para o concurso "Beat the Prof"
+fshow.c		- Utilitário para examinar representações de floating-point.
+ishow.c		- Utilitário para examinar representações de inteiros
+
+***********************************************************
+1. Modificando bits.c and verificando conformidade com dlc
+***********************************************************
+
+IMPORTANTE: Leia atentamente as instruções no arquivo bits.c antes de começar.
+Elas irão apresentar as regras de codificação que você precisará seguir se você
+quiser crédito total.
+
+Use o compilador dlc (./dlc) para verificar automaticamente se sua versão
+de bits.c está em conformidade com as diretrizes de codificação:
+
+       unix> ./dlc bits.c
+
+O dlc retornará silenciosamente se não houver problemas com seu código.
+Caso contrário, irá imprimir mensagens que sinalizam problemas. Executando o
+dlc com a opção -e:
+
+    	unix> ./dlc -e bits.c
+
+faz com que o dlc imprima contagens do número de operadores usados por
+cada função.
+
+Depois de ter uma solução aprovada, você pode testá-la usando o programa
+./btest.
+
+*********************
+2. Testando com btest
+*********************
+
+O Makefile neste diretório compila sua versão de bits.c com código adicional
+para criar um programa chamado btest.
+
+Para compilar e executar o programa btest, digite:
+
+    unix> make btest
+    unix> ./btest [argumentos de linha de comando opcionais]
+
+Você precisará recompilar o btest toda vez que mudar o seu programa bits.c. Ao
+mover de uma plataforma para outra, você vai querer se livrar da versão antiga
+do btest e gerar uma nova. Use os comandos:
+
+    unix> make clean
+    unix> make btest
+
+O btest testa seu código quanto à correção, executando milhões de casos de
+teste em cada função. Ele testa grandes faixas em torno de casos extremos bem
+conhecidos, como CMIN e zero para quebra-cabeças de inteiros, e zero, INF e o
+limite entre os números desnormalizados e normalizados para quebra-cabeças de
+ponto flutuante. Quando o btest detecta um erro em uma de suas funções, ele
+imprime o teste que falhou, o resultado incorreto e o resultado esperado e,
+em seguida, finaliza o teste dessa função.
+
+Aqui estão as opções de linha de comando para o btest:
+
+  unix> ./btest -h
+  Uso: ./btest [-hg] [-r <n>] [-f <name> [-1|-2|-3 <val>]*] [-T <time limit>]
+    -1 <val>  Especifica o primeiro argumento da função
+    -2 <val>  Especifica o segundo argumento da função
+    -3 <val>  Especifica o terceiro argumento da função
+    -f <name> Testa somente o nome da função
+    -g        Formatar saída para autograding sem mensagens de erro
+    -h        Imprime esta mensagem
+    -r <n>    Dê peso uniforme de n para todos os problemas
+    -T <lim>  Definir limite timeout para lim
+
+Exemplos:
+
+  Teste todas as funções para correção e imprime mensagens de erro:
+  unix> ./btest
+
+  Teste todas as funções de forma compacta sem mensagens de erro:
+  unix> ./btest -g
+
+  Testa a correção da função foo:
+  unix> ./btest -f foo
+
+  Testa a correção da função foo com argumentos específicos:
+  unix> ./btest -f foo -1 27 -2 0xf
+
+O btest não verifica seu código quanto à conformidade com as diretrizes de
+codificação. Use dlc para fazer isso.
+
+***********************
+3. Programas Auxiliares
+***********************
+
+Incluímos os programas ishow e fshow para ajudá-lo a decifrar representações
+de inteiros e de ponto flutuante, respectivamente. Cada um leva um único
+número decimal ou hexadecimal como um argumento. Para construí-los digite:
+
+    unix> make
+
+Exemplos de uso:
+
+    unix> ./ishow 0x27
+    Hex = 0x00000027,	Signed = 39,	Unsigned = 39
+
+    unix> ./ishow 27
+    Hex = 0x0000001b,	Signed = 27,	Unsigned = 27
+
+    unix> ./fshow 0x15213243
+    Floating point value 3.255334057e-26
+    Bit Representation 0x15213243, sign = 0, exponent = 0x2a, fraction = 0x213243
+    Normalized.  +1.2593463659 X 2^(-85)
+
+    linux> ./fshow 15213243
+    Floating point value 2.131829405e-38
+    Bit Representation 0x00e822bb, sign = 0, exponent = 0x01, fraction = 0x6822bb
+    Normalized.  +1.8135598898 X 2^(-126)
